@@ -2,7 +2,7 @@
 
 Real-time robot detection and tracking for **FIRST Tech Challenge** matches, built with a custom-trained YOLOv8 model.
 
-> Built by an FTC competitor — tested on my own team's matches in Kazakhstan.
+> Built by an FTC competitor — tested on YouTube video by "NTX FTC"
 
 <img width="640" height="360" alt="demo" src="https://github.com/user-attachments/assets/0a89722a-6c6c-479e-98f0-6710cc7c500e" />
 
