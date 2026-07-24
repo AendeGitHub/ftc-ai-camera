@@ -65,4 +65,4 @@ model.track(source="your_match.mp4", save=True, conf=0.35)
 
 ## Author
 
-FTC competitor from Kazakhstan 🇰🇿 | URAN92 - #25300 | This project started as a passion project and is growing into a research project on automated judging in educational robotics.
+FTC competitor from Kazakhstan 🇰🇿 | Khussein from URAN92 - #25300 | This project started as a passion project and is growing into a research project on automated judging in educational robotics.
