@@ -29,16 +29,17 @@ Model: YOLOv8n (3M params, 6 MB) — small enough for real-time use on edge devi
 1. **Data collection** — frames extracted from 8 full matches across 6 different FTC tournaments (DECODE season), downloaded from public streams
 2. **Labeling** — semi-automated pipeline in Roboflow: 10 frames labeled by hand → model-assisted labeling for the rest → manual review (173 approved images)
 3. **Training** — YOLOv8n fine-tuned on Google Colab (T4), 79 epochs with early stopping; hue augmentation disabled to preserve alliance colors
-4. **Evaluation** — tested on 2 held-out tournaments (Hawaii, Hartland) the model never saw during training
-
+4. **Evaluation** — tested on a held-out tournament (Hawaii) and real matches of my own team — footage the model never saw during training
 Dataset is public on [Roboflow Universe](https://universe.roboflow.com/husein-maxut/find-ftc-robot).
 
 ## Project structure
 
-extract_frames.py # cut video into frames for labeling
-train.py # train YOLOv8 on the Roboflow dataset (Colab)
-test_local.py # run tracking on a video locally + FPS benchmark
-weights/best.pt # trained model weights
+```
+extract_frames.py   # cut video into frames for labeling
+train.py            # train YOLOv8 on the Roboflow dataset (Colab)
+test_local.py       # run tracking on a video locally + FPS benchmark
+weights/best.pt     # trained model weights
+```
 
 ## Quick start
 
@@ -65,4 +66,4 @@ model.track(source="your_match.mp4", save=True, conf=0.35)
 
 ## Author
 
-FTC competitor from Kazakhstan 🇰🇿 | Khussein from URAN92 - #25300 | This project started as a passion project and is growing into a research project on automated judging in educational robotics.
+Khussein — FTC competitor from Kazakhstan 🇰🇿 | Team URAN92 #25300 | This project started as a passion project and is growing into a research project on automated judging in educational robotics.
