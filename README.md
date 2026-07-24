@@ -4,7 +4,7 @@ Real-time robot detection and tracking for **FIRST Tech Challenge** matches, bui
 
 > Built by an FTC competitor — tested on my own team's matches in Kazakhstan.
 
-<!-- DEMO GIF WILL GO HERE -->
+<img width="640" height="360" alt="demo" src="https://github.com/user-attachments/assets/0a89722a-6c6c-479e-98f0-6710cc7c500e" />
 
 ## What it does
 
@@ -31,6 +31,38 @@ Model: YOLOv8n (3M params, 6 MB) — small enough for real-time use on edge devi
 3. **Training** — YOLOv8n fine-tuned on Google Colab (T4), 79 epochs with early stopping; hue augmentation disabled to preserve alliance colors
 4. **Evaluation** — tested on 2 held-out tournaments (Hawaii, Hartland) the model never saw during training
 
-Dataset is public on [Roboflow Universe](https://universe.roboflow.com/husein-maxut/find-ftc-robot)).
+Dataset is public on [Roboflow Universe](https://universe.roboflow.com/husein-maxut/find-ftc-robot).
 
 ## Project structure
+
+extract_frames.py # cut video into frames for labeling
+train.py # train YOLOv8 on the Roboflow dataset (Colab)
+test_local.py # run tracking on a video locally + FPS benchmark
+weights/best.pt # trained model weights
+
+## Quick start
+
+```bash
+pip install ultralytics
+python test_local.py   # runs tracking on your video with live preview
+```
+
+Or in Python:
+
+```python
+from ultralytics import YOLO
+model = YOLO("weights/best.pt")
+model.track(source="your_match.mp4", save=True, conf=0.35)
+```
+
+## Roadmap
+
+- [x] Robot detection + multi-object tracking
+- [ ] Alliance color classification (red / blue)
+- [ ] Team number recognition (OCR on number holders)
+- [ ] Automatic score tracking (goal detection)
+- [ ] Foul detection — planned as a research project
+
+## Author
+
+FTC competitor from Kazakhstan 🇰🇿 | URAN92 - #25300 | This project started as a passion project and is growing into a research project on automated judging in educational robotics.
